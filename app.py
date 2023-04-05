@@ -16,9 +16,14 @@ CORS(app)
 def hello():
     return 'Server Online'
 
+@app.route("/test")
+def teste():
+    return jsonify('Server Online')
+
 
 @app.route("/upload", methods=['POST', 'GET'])
 def upload():
+    print("inciando o processo!!")
     try:
         print("Carregando dados...")
         json_data = request.get_json()
